@@ -1,12 +1,12 @@
 "use client";
 
 import { Indicator, IndicatorCircle } from "@/components/indicator";
+import LoadableImage from "@/components/loadable-image";
 import Logo from "@/components/logo";
 import IconBell from "@/icons/bell";
 import IconMenu from "@/icons/menu";
 import IconMessage from "@/icons/message";
 import IconSearch from "@/icons/search";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PropsWithChildren } from "react";
@@ -16,8 +16,8 @@ export default function DashboardLayout(props: PropsWithChildren) {
   const pathname = usePathname();
 
   return (
-    <div className="h-screen flex">
-      <aside className="sticky top-0 left-0 w-[16.8055556%] max-h-screen flex flex-col border-r-2 border-background-dark">
+    <div className="h-screen max-h-screen flex">
+      <aside className="sticky top-0 left-0 w-[16.8055556%] max-h-screen flex flex-col border-t-2 border-r-2 border-background-dark">
         <div className="h-16 flex justify-center items-center">
           <Logo />
         </div>
@@ -36,7 +36,7 @@ export default function DashboardLayout(props: PropsWithChildren) {
         ))}
       </aside>
       <main className="w-full flex flex-col">
-        <header className="h-16 flex justify-between px-7 border-b-2 border-background-dark">
+        <header className="h-16 flex justify-between px-7 border-y-2 border-background-dark">
           <div className="flex items-center gap-5">
             <button>
               <IconMenu className="size-6 text-secondary" />
@@ -61,7 +61,7 @@ export default function DashboardLayout(props: PropsWithChildren) {
               </Indicator>
             </button>
             <button>
-              <Image
+              <LoadableImage
                 src="https://i.pravatar.cc/"
                 alt="Avatar"
                 width={36}

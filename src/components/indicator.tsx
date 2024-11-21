@@ -20,6 +20,15 @@ export function IndicatorCircle({ className, ...props }: IndicatorCircleProps) {
   return (
     <>
       <svg
+        className={classes(
+          "absolute top-0 right-0 size-2 animate-ping",
+          className
+        )}
+        {...props}
+      >
+        <circle fill="currentColor" r={4} cx={4} cy={4} />
+      </svg>
+      <svg
         className={classes("absolute top-0 right-0 size-2", className)}
         {...props}
       >
