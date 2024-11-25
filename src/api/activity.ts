@@ -1,12 +1,10 @@
 "use server";
 
+import { User } from "./user";
+
 export type Activity = {
   id: number;
-  user: {
-    id: number;
-    name: string;
-    avatar: string;
-  };
+  user: User;
   description: string;
   href: string;
   createdAt: Date;

@@ -38,7 +38,7 @@ export default function DueTasks({
         <p className="text-sm text-primary-dark">
           Tenggat pada:{" "}
           <span className="text-primary">
-            {formatDate(selectedTask.dueAt, "dd MMM yyyy")}
+            {formatDate(selectedTask.dueDate, "dd MMM yyyy")}
           </span>
         </p>
       </div>

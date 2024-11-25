@@ -4,7 +4,8 @@ export type Task = {
   id: number;
   title: string;
   description: string;
-  dueAt: Date;
+  completeDate: Date | null;
+  dueDate: Date;
   tags: Tag[];
 };
 
@@ -17,7 +18,8 @@ export async function getDueTasks(): Promise<Task[]> {
           title: "Lorem ipsum",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisi lacus, euismod vitae risus non, facilisis euismod libero.",
-          dueAt: new Date(2024, 11, 11, 11, 11, 11),
+          completeDate: null,
+          dueDate: new Date(2024, 11, 11, 11, 11, 11),
           tags: [{ id: 1, name: "Lorem", color: "green" }],
         },
         {
@@ -25,7 +27,8 @@ export async function getDueTasks(): Promise<Task[]> {
           title: "Task Meeting",
           description:
             "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ut tristique sapien.",
-          dueAt: new Date(2024, 10, 5, 9, 0, 0),
+          completeDate: null,
+          dueDate: new Date(2024, 10, 5, 9, 0, 0),
           tags: [
             { id: 2, name: "Urgent", color: "pink" },
             { id: 3, name: "Meeting", color: "cyan" },
@@ -36,7 +39,8 @@ export async function getDueTasks(): Promise<Task[]> {
           title: "Design Mockup",
           description:
             "Curabitur ac risus volutpat, venenatis ante sed, fermentum erat. Nunc vel dolor et ante suscipit malesuada.",
-          dueAt: new Date(2024, 9, 15, 15, 30, 0),
+          completeDate: null,
+          dueDate: new Date(2024, 9, 15, 15, 30, 0),
           tags: [{ id: 4, name: "Design", color: "yellow" }],
         },
         {
@@ -44,7 +48,8 @@ export async function getDueTasks(): Promise<Task[]> {
           title: "Code Review",
           description:
             "Aliquam erat volutpat. Morbi ultricies risus quis lectus venenatis, vitae posuere lectus vehicula.",
-          dueAt: new Date(2024, 7, 20, 10, 45, 0),
+          completeDate: null,
+          dueDate: new Date(2024, 7, 20, 10, 45, 0),
           tags: [{ id: 6, name: "Review", color: "yellow" }],
         },
         {
@@ -52,7 +57,8 @@ export async function getDueTasks(): Promise<Task[]> {
           title: "Prepare Presentation",
           description:
             "Donec interdum, ligula eget facilisis suscipit, augue dui cursus arcu, in bibendum felis sapien non tortor.",
-          dueAt: new Date(2024, 9, 30, 12, 0, 0),
+          completeDate: null,
+          dueDate: new Date(2024, 9, 30, 12, 0, 0),
           tags: [{ id: 7, name: "Preparation", color: "green" }],
         },
       ]);
